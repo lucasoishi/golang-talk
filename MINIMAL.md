@@ -1,4 +1,4 @@
-# Golang
+# Minimal-Golang
 
 ## Conteúdo
 - [Introdução](#introdução)
@@ -71,12 +71,6 @@ func funcA (v int32) float32 {
 Struct é uma coleção de campos ([Golang Tour](https://tour.golang.org/moretypes/2))
 Structs são objetos que podem ser comparados a classes
 ```
-package main
-
-import (
-	"fmt"
-)
-
 type S struct {
 	Str string
 	I   int32
@@ -91,12 +85,6 @@ func main() {
 ### Métodos
 Em Go, métodos estão atrelados a tipos e não a classes, sendo funções com um argumento receptor especial  ([Golang Tour](https://tour.golang.org/methods/1))
 ```
-package main
-
-import (
-	"fmt"
-)
-
 type S struct {
 	Str string
 }
@@ -123,12 +111,6 @@ Um tipo interface é definido por um conjunto de métodos
 "Um valor de tipo interface pode conter qualquer valor que implementa esses métodos." ([Golang Tour](https://tour.golang.org/methods/9))
 "Interfaces são abstrações que definem um comportamento em particular sem especificar os detalhes de como esse comportamento implementado" ([Medium](https://medium.com/swlh/using-go-interfaces-for-testable-code-d2e11b02dea))
 ```
-package main
-
-import (
-	"fmt"
-)
-
 type StructType struct {
 	Str string
 }
@@ -181,12 +163,6 @@ Teste refeito, com caso de falha
 ### Defer
 Instrução que adiará uma determinada função até o retorno da função entorno ([Golang Tour](https://tour.golang.org/flowcontrol/12))
 ```
-package main
-
-import (
-	"fmt"
-)
-
 func main() {
 	defer fmt.Println("world")
 	fmt.Println("hello")
@@ -194,12 +170,6 @@ func main() {
 ```
 Quando há mais de um defer sendo declarado, a execução ocorre na ordem inversa a declaração no código
 ```
-package main
-
-import (
-	"fmt"
-)
-
 func main() {
 	defer fmt.Println("!")     //último a executar
 	defer fmt.Println("world") //2ª a executar
@@ -212,13 +182,6 @@ Go não possui uma estrutura clássica de try-catch-finally
 Para lidar com erros não críticos, Go utiliza um padrão de múltiplos retornos em uma função, como no exemplo abaixo ([Golang Tour](https://tour.golang.org/methods/19)), deixando para que o desenvolvedor decida como lidar com o erro
 
 ```
-package main
-
-import (
-	"fmt"
-	"time"
-)
-
 type MyError struct {
 	When time.Time
 	What string
@@ -260,10 +223,6 @@ Ao utilizar um panic, o fluxo de controle é interrompido e começa a entrar em 
 *Recover* é outra *builtin function* que Go disponibiliza para lidar com erros, mais especificamente quando um pânico acontece em um função
 No fluxo normal, *recover* irá retornar nulo. Mas, caso um pânico aconteça, *recover* irá capturar o vlaor do pânico e voltar a execução normal
 ```
-package main
-
-import "fmt"
-
 func main() {
 	f()
 	fmt.Println("Returned normally from f.")
@@ -301,13 +260,6 @@ func g(i int) {
 Go provê uma forma simples e fácil de implementar concorrência
 *Goroutines* são funcões ou métodos que rodam de forma concorrente em um código de Go
 ```
-package main
-
-import (
-	"fmt"
-	"time"
-)
-
 func say(s string) {
 	for i := 0; i < 5; i++ {
 		time.Sleep(100 * time.Millisecond)
@@ -326,10 +278,6 @@ Canais são um conduto tipado através do qual você pode enviar e receber valor
 Canais funcionam como filas FIFO (**F**irst **I**n **F**irst **O**ut)
 A maior utilidade de canais é possibilitar a sincronização de comunicação entre *goroutines*
 ```
-package main
-
-import "fmt"
-
 func sum(s []int, c chan int) {
 	sum := 0
 	for _, v := range s {
@@ -356,10 +304,6 @@ Caso o código tente enviar dados a um canal *buffered* que está cheio, o Go ir
 
 Instrução que permite uma espera na goroutine sobre as operações de comunicação múltiplas ([Golang Tour](https://go-tour-br.appspot.com/concurrency/5))
 ```
-package main
-
-import "fmt"
-
 func fibonacci(c, quit chan int) {
 	x, y := 0, 1
 	for {
