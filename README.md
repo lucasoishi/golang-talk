@@ -388,9 +388,15 @@ func main() {
 
 ## Referências/Links úteis
 [Study Case GetStream](https://getstream.io/blog/switched-python-go/)
+
 [Benchmark Go vs Python](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/go-python3.html)
+
 [GoTour PT-BR](https://go-tour-br.appspot.com/welcome/1)
+
 [Go PlayGround](https://play.golang.org/)
+
 [HowIStart Golang](https://howistart.org/posts/go/1/)
+
 [Go Wiki](https://github.com/golang/go/wiki)
+
 [Medium - Using Go Interfaces for Testable Code](https://medium.com/swlh/using-go-interfaces-for-testable-code-d2e11b02dea)
