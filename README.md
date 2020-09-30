@@ -160,19 +160,20 @@ type Printer interface {
 Interfaces também são recursos importantes para fazer testes em Go. Uma das suas utilidades é possibilitar realizar *mocks* de determinados comportamentos com facilidade
 
 External Package
-[](https://raw.githubusercontent.com/lucasoishi/golang-talk/master/external-package.png)
+![External-Package](https://raw.githubusercontent.com/lucasoishi/golang-talk/master/external-package.png)
 
 Foo Package
-[](https://raw.githubusercontent.com/lucasoishi/golang-talk/master/foo-package.png)
+![Foo-Package](https://raw.githubusercontent.com/lucasoishi/golang-talk/master/foo-package.png)
 
 Arquivo Teste - o teste TestController_Failure falha pois não há um mock do comportamento da struct Client 
-[](https://raw.githubusercontent.com/lucasoishi/golang-talk/master/test-1.png)
+![Test-File](https://raw.githubusercontent.com/lucasoishi/golang-talk/master/test-1.png)
 
 Refatoração de Foo-Package (agora utiliza interface para implementação do comportamento GetData, possibilitando mockar o comportamento nos testes)
-[](https://raw.githubusercontent.com/lucasoishi/golang-talk/master/foo-package-better.png)
+![Foo-Package-Refactor](https://raw.githubusercontent.com/lucasoishi/golang-talk/master/foo-package-better.png)
 
 Teste refeito, com caso de falha
-[](https://raw.githubusercontent.com/lucasoishi/golang-talk/master/test-2.png)
+![Test-Redone](https://raw.githubusercontent.com/lucasoishi/golang-talk/master/test-2.png)
+
 ### Defer
 Instrução que adiará uma determinada função até o retorno da função entorno ([Golang Tour](https://tour.golang.org/flowcontrol/12))
 ```
