@@ -160,18 +160,23 @@ type Printer interface {
 Interfaces também são recursos importantes para fazer testes em Go. Uma das suas utilidades é possibilitar realizar *mocks* de determinados comportamentos com facilidade
 
 External Package
+
 ![External-Package](https://raw.githubusercontent.com/lucasoishi/golang-talk/master/external-package.png)
 
 Foo Package
+
 ![Foo-Package](https://raw.githubusercontent.com/lucasoishi/golang-talk/master/foo-package.png)
 
 Arquivo Teste - o teste TestController_Failure falha pois não há um mock do comportamento da struct Client 
+
 ![Test-File](https://raw.githubusercontent.com/lucasoishi/golang-talk/master/test-1.png)
 
 Refatoração de Foo-Package (agora utiliza interface para implementação do comportamento GetData, possibilitando mockar o comportamento nos testes)
+
 ![Foo-Package-Refactor](https://raw.githubusercontent.com/lucasoishi/golang-talk/master/foo-package-better.png)
 
 Teste refeito, com caso de falha
+
 ![Test-Redone](https://raw.githubusercontent.com/lucasoishi/golang-talk/master/test-2.png)
 
 ### Defer
