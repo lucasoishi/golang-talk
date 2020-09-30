@@ -1,6 +1,5 @@
 # Golang
 
-[Custom foo description](##Introdução)
 ## Conteúdo
 - [Introdução](#introdução)
 	- [Um pouco sobre Go](#um-pouco-sobre-go)
